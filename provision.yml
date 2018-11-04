@@ -8,7 +8,7 @@
       instance_type: t2.micro
       security_group: sinatra-webserver
       image: ami-01c2df5ce9bc2f573
-      keypair: conf
+      keypair: ansible
       region: ap-southeast-2
       count: 1
       vpc_subnet_id: subnet-70ab2417

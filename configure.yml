@@ -1,0 +1,22 @@
+---
+  - name: Configure sinatra
+    hosts: webserver
+    tasks:
+      - name: Update repo cache and install bundler
+        apt:
+          name: bundler
+          update_cache: yes
+        become: yes
+
+      - name: Install bundle
+        shell: |
+          git clone https://github.com/rea-cruitment/simple-sinatra-app.git
+          cd simple-sinatra-app
+          bundle install
+
+      - name: run bundle
+        shell: |
+          cd simple-sinatra-app
+          ipaddr=$(hostname -I)
+          nohup bundle exec rackup -p 80 --host $ipaddr </dev/null >/dev/null 2>&1 & sleep 1
+        become: yes
