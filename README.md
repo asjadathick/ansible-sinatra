@@ -13,7 +13,7 @@ Run:
   - ansible
 ```brew install ansible```
   - Create and download a keypair with the name 'ansible' on AWS EC2. Save the ansible.pem file in your ~/.ssh/ directory. Instructions on creating a keypair [here](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html). Alternatively, use aws-cli and ```create-key-pair```.
-
+  - Update your vpc_subnet_id (line 14) in [provision.yml](/provision.yml). You can find your subnet_id in your EC2 VPC dashboard. This ID is required to create the EC2 instance.
 
 ### Playbook structure
 The solution is organised into 2 playbooks:

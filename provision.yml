@@ -11,7 +11,7 @@
       keypair: ansible
       region: ap-southeast-2
       count: 1
-      vpc_subnet_id: subnet-70ab2417
+      vpc_subnet_id: subnet-xxxxID
       assign_public_ip: yes
 
     # Task that will be used to Launch/Create an EC2 Instance
