@@ -8,13 +8,13 @@
           update_cache: yes
         become: yes
 
-      - name: Install bundle
+      - name: Install the bundle
         shell: |
           git clone https://github.com/rea-cruitment/simple-sinatra-app.git
           cd simple-sinatra-app
           bundle install
 
-      - name: run bundle
+      - name: Run application on port 80
         shell: |
           cd simple-sinatra-app
           ipaddr=$(hostname -I)
