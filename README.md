@@ -40,6 +40,8 @@ $ ansible-playbook configure.yml
 ### Future improvements
 
 Some improvements that come to mind include:
+- Automatically gather subnet_id from available subnets
+- Create EC2 keypair automatically as part of provision.yml
 - Removing SSH access on the Security Group after configuring the instance to reduce risk posture
 - Disabling publickey login after configuration is complete to reduce risk posture
 - Deploy the application using a pre-built AMI image, rather than configuring the instance after provisioning a fresh EC2 (Use packer to build image and upload AMI to AWS prior to provisioning)
@@ -48,3 +50,5 @@ Some improvements that come to mind include:
 ### Issues
 - terminate_all.yml does not remove old hosts from the host file. This will leave configure.yml trying to configure dead hosts when invoked in the future
 
+### Otherwise
+The playbooks do as advertised. They successfully provision an EC2 instance and configure it to run the sample app. No defects currently.
